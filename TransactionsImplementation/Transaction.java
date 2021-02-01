@@ -12,6 +12,7 @@ public class Transaction {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((AccountType == null) ? 0 : AccountType.hashCode());
 		long temp;
 		temp = Double.doubleToLongBits(amount);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
@@ -32,6 +33,11 @@ public class Transaction {
 		if (getClass() != obj.getClass())
 			return false;
 		Transaction other = (Transaction) obj;
+		if (AccountType == null) {
+			if (other.AccountType != null)
+				return false;
+		} else if (!AccountType.equals(other.AccountType))
+			return false;
 		if (Double.doubleToLongBits(amount) != Double.doubleToLongBits(other.amount))
 			return false;
 		if (dest == null) {
@@ -56,13 +62,22 @@ public class Transaction {
 		return true;
 	}
 
+	public String getAccountType() {
+		return AccountType;
+	}
+
+	public void setAccountType(String accountType) {
+		AccountType = accountType;
+	}
+
 	private String src;
 	private String dest;
 	private double amount;
 	private LocalDate localDate;
 	private TransactionType type;
+	private String AccountType;
 
-	public Transaction(int id, String src, String dest, TransactionType type, double amount, String dateoftran) {
+	public Transaction(int id, String src, String dest, TransactionType type, double amount, String dateoftran, String AccountType) {
 
 		this.id = id;
 		this.src = src;
@@ -70,6 +85,7 @@ public class Transaction {
 		this.amount = amount;
 		this.type = type;
 		this.localDate = LocalDate.parse(dateoftran, DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.US));
+		this.AccountType = AccountType;
 
 	}
 
