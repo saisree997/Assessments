@@ -5,7 +5,7 @@
  */
 
 
-package com.planon.assignment3;
+package com.planon.UserDefinedException;
 
 public class MissingNameException extends Exception {
 

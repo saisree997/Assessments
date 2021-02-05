@@ -1,4 +1,4 @@
-package com.planon.assignment1;
+package com.planon.EmployeeApprisal;
 
 public class Manager extends Department{
 

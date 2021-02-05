@@ -1,4 +1,4 @@
-package com.planon.assignment2;
+package com.planon.RestaurantRanking;
 
 import java.util.ArrayList;
 

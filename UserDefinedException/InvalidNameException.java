@@ -4,7 +4,7 @@
  * @author saisree
  */
 
-package com.planon.assignment3;
+package com.planon.UserDefinedException;
 
 public class InvalidNameException extends Exception{
 

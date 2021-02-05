@@ -1,4 +1,4 @@
-package com.planon.assignment1;
+package com.planon.EmployeeApprisal;
 public class Employee implements Comparable<Employee>{  
 	public String name;  
 	public String dept;  

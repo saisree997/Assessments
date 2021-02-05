@@ -2,7 +2,7 @@
  * it's POJO of student class to get and set student variables
  * @author saisree
  */
-package com.planon.assignment3;
+package com.planon.UserDefinedException;
 
 public class student {
 

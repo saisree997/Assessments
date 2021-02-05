@@ -1,7 +1,12 @@
-package com.planon.assignment4;
+package com.planon.TransactionsImplementation;
 
-public class Current {
+public class Current extends Interest{
 
-	public static final double interest = 3;
+	@Override
+	public double getInterestRate() {
+		
+		double interest = 3;
+		return interest;
+	}
 	
 }

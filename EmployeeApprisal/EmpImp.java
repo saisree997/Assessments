@@ -1,4 +1,4 @@
-package com.planon.assignment1;
+package com.planon.EmployeeApprisal;
 
 import java.util.ArrayList;
 import java.util.Collections;

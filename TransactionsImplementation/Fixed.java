@@ -1,7 +1,13 @@
-package com.planon.assignment4;
+package com.planon.TransactionsImplementation;
 
-public class Fixed {
+public class Fixed extends Interest{
 	
-	public static final double interest = 5;
+	@Override
+	public double getInterestRate() {
+		double interest = 5;
+		return interest;
+		
+		
+	}
 
 }

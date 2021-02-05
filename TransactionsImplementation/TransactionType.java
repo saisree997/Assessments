@@ -1,4 +1,4 @@
-package com.planon.assignment4;
+package com.planon.TransactionsImplementation;
 
 public enum TransactionType {
 	DEBIT, CREDIT;
