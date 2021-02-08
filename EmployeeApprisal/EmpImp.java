@@ -1,3 +1,8 @@
+/**
+ * main class for getting employee details 
+ * @author sakond
+ */
+
 package com.planon.EmployeeApprisal;
 
 import java.util.ArrayList;
@@ -25,13 +30,19 @@ public class EmpImp {
 		hash_Set.add(emp);
 		List<Employee> list = new ArrayList<Employee>(hash_Set);
 
-		// to calculate the incremented salary
+		/**
+		 *  to calculate the incremented salary
+		 */
 		CalculateIncSal(list);
 
-		// to sort the employee list
+		/**
+		 *  to sort the employee list
+		 */
 		Collections.sort(list);
 
-		// to print the sorted list
+		/**
+		 *  to print the sorted list
+		 */
 		for (Employee e : list) {
 			System.out.println(e.name + " " + e.dept + " " + e.salary);
 		}

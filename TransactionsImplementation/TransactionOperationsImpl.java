@@ -106,7 +106,7 @@ public class TransactionOperationsImpl implements TransactionOperations {
 			noofdaysmap.put("SA2", "SA2,01-07-,31-12-,184");
 			noofdaysmap.put("A", "A,01-01-,31-12-,365");
 			
-			Map<String, Double> balancemap = new HashMap<String,Double>();
+			Map<String, Double> constantsmap = new HashMap<String,Double>();
 			
 			if(noofdaysmap.containsKey(qkey))
 			{
@@ -119,22 +119,22 @@ public class TransactionOperationsImpl implements TransactionOperations {
 				String noofdays = values[3];
 				
 				transactionlist.stream().filter(
-						trans -> trans.getLocalDate().isBefore(fromdateLocalDate) && trans.getLocalDate().isAfter(fromdateLocalDate))
+						trans -> trans.getLocalDate().isBefore(todateLocalDate) && trans.getLocalDate().isAfter(fromdateLocalDate))
 						.forEach(transaction -> {
 							double balanceamount = 0;
 							
-							if (balancemap.containsKey(transaction.getSrc())) {
+							if (constantsmap.containsKey(transaction.getSrc())) {
 								balanceamount = (transaction.getType().equals(TransactionType.CREDIT)
-										? balancemap.get(transaction.getSrc()) + transaction.getAmount()
-										: balancemap.get(transaction.getSrc()) - transaction.getAmount());
+										? constantsmap.get(transaction.getSrc()) + transaction.getAmount()
+										: constantsmap.get(transaction.getSrc()) - transaction.getAmount());
 							} else {
 								balanceamount = (transaction.getType().equals(TransactionType.CREDIT) ? transaction.getAmount()
 										: -transaction.getAmount());
 							}
-							balancemap.put(transaction.getSrc()+ transaction.getAccountType()+"-"+ noofdays+"-"+quatername, balanceamount);
+							constantsmap.put(transaction.getSrc()+ "-" + transaction.getAccountType()+"-"+ noofdays+"-"+quatername, balanceamount);
 				});
 	}
-			return balancemap;
+			return constantsmap;
 	}
 	/**
 	@inheritdoc

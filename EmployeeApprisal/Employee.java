@@ -29,7 +29,9 @@ public void setSalary(double salary) {
 	this.salary = salary;
 }
 
-//to compare employees based on salary
+/**
+ * to compare employees based on salary
+ */
 public int compareTo(Employee e){  
 if(salary==e.salary)  
 return 0;  

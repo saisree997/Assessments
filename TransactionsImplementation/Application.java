@@ -13,8 +13,6 @@ import java.util.Map;
 
 public class Application {
 
-	private static Object L;
-
 	public static void main(String args[]) throws ParseException {
 		TransactionDetails td = new TransactionDetails();
 		TransactionOperations tp = new TransactionOperationsImpl();
@@ -24,8 +22,8 @@ public class Application {
 		LocalDate inputLocalDate = LocalDate.parse(inputdate, DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.US));
 		tp.getBalanceSheet(inputLocalDate, transactionlist);
 
-		Map<String, Double> tranmap = tp.getQuaterBasedBal(transactionlist);
-		tp.getQuaterBasedInterest(tranmap);
+		//Map<String, Double> tranmap = tp.getQuaterBasedBal(transactionlist);
+		//tp.getQuaterBasedInterest(tranmap);
 		
 	    Map<String,Double> constantsmap = tp.getPeriodBasedBal(transactionlist, "Q1", "2020");
 	    tp.getPeriodBasedInterest(constantsmap);
