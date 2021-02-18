@@ -1,7 +1,7 @@
 package com.planon.entities;
 
 /**
- * SecurityService class contains service name and cost of service "Security"
+ * Class contains service name and cost of service "Security"
  *
  */
 

@@ -11,7 +11,7 @@ import com.planon.entities.MemberShip;
 public class TopUpServiceFactory {
 	static Logger log = Logger.getLogger(MemberShip.class.getName());
 	/**
-	 * Method to get the type of TopUpService object
+	 * Method to get the type of TopUpServices object
 	 * 
 	 * @param memberShip
 	 * @return TopUpServices object

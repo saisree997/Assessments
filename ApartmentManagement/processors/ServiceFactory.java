@@ -16,7 +16,7 @@ public class ServiceFactory {
 	static Logger log = Logger.getLogger(ServiceFactory.class.getName());
 
 	/**
-	 * Method to get the type of Service object
+	 * Method to get the type of Services object
 	 * 
 	 * @param serviceName
 	 * @return Services object

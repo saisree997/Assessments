@@ -1,7 +1,7 @@
 package com.planon.entities;
 
 /**
- * PowerBackUpService class contains service name and cost of service "Power BackUp"
+ * Class contains service name and cost of service "Power BackUp"
  *
  */
 

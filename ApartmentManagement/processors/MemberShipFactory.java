@@ -13,7 +13,7 @@ public class MemberShipFactory {
 	static Logger log = Logger.getLogger(MemberShipFactory.class.getName());
 
 	/**
-	 * Method to get the type of MemberShipService object
+	 * Method to get the type of MemberShipServices object
 	 * 
 	 * @param memberShipType
 	 * @return MemberShipServices object

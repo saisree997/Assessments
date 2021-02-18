@@ -27,7 +27,7 @@ public class MemberOperationsImpl implements MemberOperations {
 	ServiceFactory serviceFactory = new ServiceFactory();
 	private static final Logger log = Logger.getLogger(MemberOperationsImpl.class.getName());
 	Scanner scanner = new Scanner(System.in);
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -41,9 +41,8 @@ public class MemberOperationsImpl implements MemberOperations {
 			int memberId = scanner.nextInt();
 			if (memberId == 0)
 				break;
-			while(true)
-			{
-				if(!membersData.containsKey(memberId))
+			while (true) {
+				if (!membersData.containsKey(memberId))
 					break;
 				log.info("The member id you have entered already exists, please enter a different member id");
 				memberId = scanner.nextInt();
@@ -119,26 +118,29 @@ public class MemberOperationsImpl implements MemberOperations {
 		}
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	@Override
 	public void fetchMonthlyBill(Map<Integer, ApartmentMember> membersData) {
-		membersData.forEach((id,member) -> {
-	            LocalDate fromdate = member.getMemberShipStartDate();
-	            LocalDate todate = java.time.LocalDate.now();
-	            /**
-	             * Condition to check whether membership started in the current month, if yes
-	             * calculate bill for effective used days, else return full month bill
-	             */
-	            if (fromdate.getMonthValue() == todate.getMonthValue()) {
-	                int dayOfMonth = fromdate.getDayOfMonth();
-	                int totalDays = fromdate.getMonth().maxLength();
-	                int usedDays = (totalDays - dayOfMonth) + 1;
-	                BigDecimal billAmount =  BigDecimal.valueOf((member.getCost() / totalDays) * usedDays);
-	                log.info("Bill amount for "+ fromdate.getMonth() +" month is " +billAmount.toString());
-	            } else {
+		membersData.forEach((id, member) -> {
+			LocalDate fromdate = member.getMemberShipStartDate();
+			LocalDate todate = java.time.LocalDate.now();
+			/**
+			 * Condition to check whether membership started in the current month, if yes
+			 * calculate bill for effective used days, else return full month bill
+			 */
+			if (fromdate.getMonthValue() == todate.getMonthValue()) {
+				int dayOfMonth = fromdate.getDayOfMonth();
+				int totalDays = fromdate.getMonth().maxLength();
+				int usedDays = (totalDays - dayOfMonth) + 1;
+				BigDecimal billAmount = BigDecimal.valueOf((member.getCost() / totalDays) * usedDays);
+				log.info("Bill amount for " + fromdate.getMonth() + " month is " + billAmount.toString());
+			} else {
 
-	 
-
-	                log.info("Bill amount for "+ fromdate.getMonth() +" month is " +Double.toString(member.getCost()));
-	        }});
-	    }
+				log.info("Bill amount for " + fromdate.getMonth() + " month is " + Double.toString(member.getCost()));
+			}
+		});
+	}
 }

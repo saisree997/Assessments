@@ -1,7 +1,7 @@
 package com.planon.entities;
 
 /**
- * FourWheelerParkingService class contains service name and cost of service "Four Wheeler Parking"
+ * Class contains service name and cost of service "Four Wheeler Parking"
  *
  */
 

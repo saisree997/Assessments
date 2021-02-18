@@ -1,7 +1,7 @@
 package com.planon.entities;
 
 /**
- * ClubService class contains service name and cost of service "Club"
+ *  Class contains service name and cost of service "Club"
  *
  */
 
