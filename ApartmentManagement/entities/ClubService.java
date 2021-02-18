@@ -1,5 +1,7 @@
 package com.planon.entities;
 
+import com.planon.client.Service;
+
 /**
  *  Class contains service name and cost of service "Club"
  *
@@ -7,8 +9,8 @@ package com.planon.entities;
 
 public class ClubService implements Service{
 	
-	private double costOfService = 1000;
 	private String serviceName = "Club";
+	private double costOfService = 1000;
 
 	@Override
 	public String getServicename() {

@@ -1,4 +1,4 @@
-package com.planon.entities;
+package com.planon.client;
 
 /**
  * Interface to get name and cost of service based on the object created

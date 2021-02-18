@@ -11,10 +11,10 @@ import java.util.logging.Logger;
 
 import com.planon.client.MemberOperations;
 import com.planon.client.MemberShipServices;
+import com.planon.client.Service;
 import com.planon.client.TopUpServices;
 import com.planon.entities.ApartmentMember;
 import com.planon.entities.MemberShip;
-import com.planon.entities.Service;
 
 /**
  * Class containing all the implementations of MemberOperations Interface and

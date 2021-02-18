@@ -1,13 +1,14 @@
 package com.planon.processors;
 
 import java.util.logging.Logger;
+
+import com.planon.client.Service;
 import com.planon.entities.ClubService;
 import com.planon.entities.FourWheelerParkingService;
 import com.planon.entities.GymService;
 import com.planon.entities.MaintainanceService;
 import com.planon.entities.PowerBackUpService;
 import com.planon.entities.SecurityService;
-import com.planon.entities.Service;
 import com.planon.entities.SwimmingPoolService;
 import com.planon.entities.TwoWheelerParkingService;
 
