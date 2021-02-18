@@ -1,25 +1,39 @@
 
 package com.planon.processors;
 
-import com.planon.entities.MemberShip;
-import com.planon.util.BasicMemberShip;
-import com.planon.util.DeluxeMemberShip;
-import com.planon.util.EliteMemberShip;
-import com.planon.util.MemberShipServices;
+import java.util.logging.Logger;
 
-/**
- * Method to get the type of MemberShipService object
- * 
- * @param memberShipType
- * @return MemberShipServices object
- */
+import com.planon.client.BasicMemberShip;
+import com.planon.client.DeluxeMemberShip;
+import com.planon.client.EliteMemberShip;
+import com.planon.client.MemberShipServices;
+import com.planon.entities.MemberShip;
+
 public class MemberShipFactory {
-	public MemberShipServices getMemberShipDetails(String memberShipType) {
-		if (MemberShip.BASIC.equals(MemberShip.valueOf(memberShipType)))
+	static Logger log = Logger.getLogger(MemberShipFactory.class.getName());
+
+	/**
+	 * Method to get the type of MemberShipService object
+	 * 
+	 * @param memberShipType
+	 * @return MemberShipServices object
+	 */
+
+	public MemberShipServices getMemberShipDetails(MemberShip memberShip) {
+		switch (memberShip) {
+		case BASIC:
 			return new BasicMemberShip();
-		else if (MemberShip.DELUXE.equals(MemberShip.valueOf(memberShipType)))
+
+		case DELUXE:
 			return new DeluxeMemberShip();
-		else
+
+		case ELITE:
 			return new EliteMemberShip();
+
+		default:
+			log.info("Membership not found");
+			break;
+		}
+		return null;
 	}
 }
