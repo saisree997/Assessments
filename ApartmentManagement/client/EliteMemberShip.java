@@ -1,7 +1,5 @@
-
 package com.planon.client;
 
-import java.util.ArrayList;
 import java.util.List;
 import com.planon.entities.ClubService;
 import com.planon.entities.GymService;
@@ -22,8 +20,7 @@ public class EliteMemberShip extends DeluxeMemberShip {
 	 */
 	@Override
 	public List<String> getServicesNames() {
-		List<String> servicesNames;
-		servicesNames = new ArrayList<>();
+		List<String> servicesNames = super.getServicesNames();
 		servicesNames.add(gymServiceObj.getServicename());
 		servicesNames.add(swimmingPoolServiceObj.getServicename());
 		servicesNames.add(clubServiceObj.getServicename());

@@ -8,16 +8,21 @@ import com.planon.entities.FourWheelerParkingService;
 import com.planon.entities.GymService;
 import com.planon.entities.MaintainanceService;
 import com.planon.entities.PowerBackUpService;
+import com.planon.entities.SecondCarParkingService;
 import com.planon.entities.SecurityService;
 import com.planon.entities.SwimmingPoolService;
 import com.planon.entities.TwoWheelerParkingService;
 
+/**
+ * Class to get the Service object
+ *
+ */
 public class ServiceFactory {
 
 	static Logger log = Logger.getLogger(ServiceFactory.class.getName());
 
 	/**
-	 * Method to get the type of Services object
+	 * Method to get the type of Service object
 	 * 
 	 * @param serviceName
 	 * @return Services object
@@ -50,7 +55,7 @@ public class ServiceFactory {
 			return new PowerBackUpService();
 
 		case "second car parking":
-			return new PowerBackUpService();
+			return new SecondCarParkingService();
 
 		default:
 			log.info("Service name not found");

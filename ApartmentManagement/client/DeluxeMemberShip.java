@@ -1,7 +1,5 @@
-
 package com.planon.client;
 
-import java.util.ArrayList;
 import java.util.List;
 import com.planon.entities.FourWheelerParkingService;
 import com.planon.entities.TwoWheelerParkingService;
@@ -20,8 +18,7 @@ public class DeluxeMemberShip extends BasicMemberShip {
 	 */
 	@Override
 	public List<String> getServicesNames() {
-		List<String> servicesNames;
-		servicesNames = new ArrayList<>();
+		List<String> servicesNames = super.getServicesNames();
 		servicesNames.add(twoWheelerParkingServiceObj.getServicename());
 		servicesNames.add(fourWheelerParkingServiceObj.getServicename());
 		return servicesNames;

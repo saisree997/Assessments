@@ -3,12 +3,12 @@ package com.planon.entities;
 import com.planon.client.Service;
 
 /**
- * Class contains service name and cost of service "Second Car Parking"
+ * Class contains service name and cost for "Second car parking" service
  *
  */
 
-public class SecondCarParkingService implements Service{
-	
+public class SecondCarParkingService implements Service {
+
 	private String serviceName = "Second Car Parking";
 	private double costOfService = 400;
 

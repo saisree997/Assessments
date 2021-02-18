@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * ApartmentMember is an entity with all the getter, setter methods, parameterized
+ * MemberDetails is an entity with all the getter, setter methods, parameterized
  * constructor to create a object of Member, overridden hashcode, equals method
  */
 public class ApartmentMember {
@@ -36,11 +36,6 @@ public class ApartmentMember {
 		return cost;
 	}
 
-	/**
-	 * setter method to set cost
-	 * @param cost
-	 */
-	
 	public void setCost(double cost) {
 		this.cost = cost;
 	}
@@ -49,29 +44,15 @@ public class ApartmentMember {
 		return servicesnames;
 	}
 
-	/** 
-	 * setter method to set list of service names
-	 * @param list
-	 */
-	
 	public void setServicesnames(List<String> list) {
 		this.servicesnames = list;
 	}
 
-	/**
-	 * ApartmentMember is parameterized constructor which takes following input parameters
-	 * @param memberId
-	 * @param memberName
-	 * @param memberShip
-	 * @param memberShipStartDate
-	 */
-	
 	public ApartmentMember(int memberId, String memberName, MemberShip memberShip, String memberShipStartDate) {
 		this.memberId = memberId;
 		this.memberName = memberName;
 		this.memberShip = memberShip;
 		this.memberShipStartDate = LocalDate.parse(memberShipStartDate);
-
 	}
 
 	@Override

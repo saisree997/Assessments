@@ -91,7 +91,7 @@ public class MemberOperationsImpl implements MemberOperations {
 	 */
 	@Override
 	public void settingTopUpServicesDetails(Map<Integer, ApartmentMember> membersData) {
-		log.info("Enter a member id to add top up services");
+		log.info("Enter member id to add top up services");
 		int memberId = scanner.nextInt();
 		/**
 		 * Checking if the given member id is valid or not
@@ -116,30 +116,32 @@ public class MemberOperationsImpl implements MemberOperations {
 				member.setCost(cost);
 			}
 		}
+		else {
+			log.info("The member id you have entered does not exist.");
+		}
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
 	 */
 	@Override
 	public void fetchMonthlyBill(Map<Integer, ApartmentMember> membersData) {
 		membersData.forEach((id, member) -> {
-			LocalDate fromdate = member.getMemberShipStartDate();
-			LocalDate todate = java.time.LocalDate.now();
+			LocalDate membershipStartDate = member.getMemberShipStartDate();
+			LocalDate currentDate = java.time.LocalDate.now();
+		
 			/**
 			 * Condition to check whether membership started in the current month, if yes
 			 * calculate bill for effective used days, else return full month bill
 			 */
-			if (fromdate.getMonthValue() == todate.getMonthValue()) {
-				int dayOfMonth = fromdate.getDayOfMonth();
-				int totalDays = fromdate.getMonth().maxLength();
+			if (membershipStartDate.getMonthValue() == currentDate.getMonthValue()) {
+				int dayOfMonth = membershipStartDate.getDayOfMonth();
+				int totalDays = membershipStartDate.getMonth().maxLength();
 				int usedDays = (totalDays - dayOfMonth) + 1;
 				BigDecimal billAmount = BigDecimal.valueOf((member.getCost() / totalDays) * usedDays);
-				log.info("Bill amount for " + fromdate.getMonth() + " month is " + billAmount.toString());
+				log.info("Bill amount for "+member.getMemberName()+" for "+ currentDate.getMonth() + " month is " + billAmount.toString());
 			} else {
-
-				log.info("Bill amount for " + fromdate.getMonth() + " month is " + Double.toString(member.getCost()));
+				log.info("Bill amount for "+member.getMemberName()+" for " + currentDate.getMonth()+ " month is " + Double.toString(member.getCost()));
 			}
 		});
 	}

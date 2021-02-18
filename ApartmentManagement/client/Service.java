@@ -1,5 +1,6 @@
 package com.planon.client;
 
+
 /**
  * Interface to get name and cost of service based on the object created
  *
@@ -9,14 +10,14 @@ public interface Service {
 	/**
 	 * method to get the service name
 	 * 
-	 * @return
+	 * @return servicename
 	 */
 	public String getServicename();
-
+	
 	/**
 	 * method to get the cost
 	 * 
-	 * @return
+	 * @return cost
 	 */
 	public double getCost();
 }
